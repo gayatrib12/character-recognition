@@ -163,8 +163,6 @@ def classifyImages(inputFileName, outputFileName, doExtraCredit=False):
         mask2 = groundTruth == predictedLabels
         print('Accuracy: {}%'.format(100. * np.sum(mask2) / len(groundTruth)))
 
-    print("Plotting example data. You may need to close the plot window for the script to finish running.")
-
     exampleIdx = np.random.choice(np.arange(testImages.shape[0]), 6, replace=False)
 
     plt.figure()
@@ -180,8 +178,10 @@ def classifyImages(inputFileName, outputFileName, doExtraCredit=False):
         plt.xticks([])
         plt.yticks([])
     plt.savefig('predictions.png')
-    plt.show()
+    # plt.show()
+    # plt.pause(0.1)
 
+    print("Example data plot has been saved as 'predictions.png'.")
 
 if __name__ == '__main__':
     if len(sys.argv) != 3 and len(sys.argv) != 4:
