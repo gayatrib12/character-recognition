@@ -1,17 +1,64 @@
-# Code Explanation
+# README
 
-## File Descriptions
+## Script Descriptions
 
-- `train.py` - Train and cross validate a(n) X to recognize handwritten characters.
+- `train.py` - Train and cross validate a CNN to classify handwritten characters.
 
-- `test.py` - Test the X for handwritten character recognition on an unknown test data set.
+- `test.py` - Test pre-trained CNN.
 
 ## Running code
 
-The `run.py` script can be ran using the `python test.py inData.npy outlabel.npy`
-command. The code was written using Python 3.6.6 and the following modules:
+To classify the 'a and b' dataset, run:
 
+```
+python test.py inData.npy out
+```
+
+where `inData.npy` can be a different name.
+
+To classify the 'hard' dataset with 8 letters and unknowns, specify the `-e` flag:
+
+```
+python test.py inData.npy out -e
+```
+
+To verify that our `train.py` script works, simply run:
+
+```
+python train.py
+```
+
+This uses the training data set we last trained the CNN on. The script may take
+a while to run since it will run for at least 150 epochs. **IMPORTATN** The
+script will overwrite files when it executes.
+
+## Libraries Used
+
+The list of libraries used is
+
+- copy
+- json
 - matplotlib
 - numpy
-- skimage
-- sklearn
+- os
+- pytorch
+- torchvision
+- scikit-image
+- scikit-learn
+- scipy
+- sys
+
+## CNN Struture
+
+The parameters of the CNN are
+
+- conv1.weight
+- conv1.bias
+- conv2.weight
+- conv2.bias
+- fc1.weight
+- fc1.bias
+- fc2.weight
+- fc2.bias
+
+Notice that learning rate and momentum are not included.
