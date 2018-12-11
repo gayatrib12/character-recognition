@@ -8,18 +8,21 @@
 
 ## Running code
 
+**Important Information**: The code was written in python 3.6.7 using PyTorch
+library version 0.4.1.
+
 To classify the 'a and b' dataset, run:
 
 ```
-python test.py inData.npy out
+python test.py abData.npy out
 ```
 
-where `inData.npy` can be a different name.
+where `abData.npy` can be a different name.
 
 To classify the 'hard' dataset with 8 letters and unknowns, specify the `-e` flag:
 
 ```
-python test.py inData.npy out -e
+python test.py hardData.npy out -e
 ```
 
 To verify that our `train.py` script works, simply run:
