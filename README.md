@@ -11,7 +11,7 @@
 **Important Information**: The code was written in python 3.6.7 using PyTorch
 library version 0.4.1.
 
-To classify the 'a and b' dataset, run:
+To classify the 'a and b/easy' dataset, run:
 
 ```
 python test.py abData.npy out
@@ -32,7 +32,7 @@ python train.py
 ```
 
 This uses the training data set we last trained the CNN on. The script may take
-a while to run since it will run for at least 150 epochs. **IMPORTATN** The
+a while to run since it will run for at least 150 epochs. **IMPORTANT** The
 script will overwrite files when it executes.
 
 ## Libraries Used
