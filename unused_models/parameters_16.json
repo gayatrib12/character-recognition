@@ -1,0 +1,13 @@
+{
+	"npy_files_prefix": "sampledall",
+	"random_seed": 5,
+	"resized_shape": 28,
+	"number_of_epochs": 150,
+	"learning_rate": 0.01,
+	"momentum": 0.5,
+	"log_interval": 10,
+	"test_size": 0.33,
+	"train_batch_size": 1,
+	"test_batch_size": 64,
+	"final_accuracy": 39.0
+}
