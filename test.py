@@ -112,17 +112,12 @@ def classifyImages(inputFileName, outputFileName, doExtraCredit=False):
     # Choose the right model from all of the runs for the 'a or b' test case
     # and the 'extra credit' test case.
     if doExtraCredit:
-        # runNumber = 9  # original -> worse
-        # runNumber = 14  # evenly sampled (13 was used for the paper for Table 1)
         runNumber = 21
-        charList = ['unknown', 'a', 'b', 'c', 'd', 'h', 'i', 'j',
-                    'k']  # character list
     else:
-        # runNumber = 2  # original -> worse
-        # runNumber = 7  # evenly sampled
-        # runNumber = 19  # back to original method but 300 epochs and train batch size of 32
         runNumber = 20
-        charList = ['', 'a', 'b', 'c', 'd', 'h', 'i', 'j', 'k']
+
+    # Create a character list
+    charList = ['unknown', 'a', 'b', 'c', 'd', 'h', 'i', 'j', 'k']
 
     print("Testing in progress, this may take a couple of minutes...\n")
 
