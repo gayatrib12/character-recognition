@@ -263,13 +263,13 @@ def cnnTrain(epoch, network, trainLoader, optimizer, trainLosses, trainCounter,
 if __name__ == '__main__':
     """======================== Tunable Parameters ========================"""
 
-    runNumber = 0
+    runNumber = 19
 
     params = {
         'npy_files_prefix': 'ab',
         'random_seed': 4,
         'resized_shape': 28,
-        'number_of_epochs': 150,
+        'number_of_epochs': 300,
         'learning_rate': 0.01,
         'momentum': 0.5,
         'log_interval': 10,

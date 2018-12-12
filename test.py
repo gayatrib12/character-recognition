@@ -118,7 +118,8 @@ def classifyImages(inputFileName, outputFileName, doExtraCredit=False):
                     'k']  # character list
     else:
         # runNumber = 2  # original -> worse
-        runNumber = 7  # evenly sampled
+        # runNumber = 7  # evenly sampled
+        runNumber = 19  # back to original method but 300 epochs and train batch size of 32
         charList = ['', 'a', 'b', 'c', 'd', 'h', 'i', 'j', 'k']
 
     print("Testing in progress, this may take a couple of minutes...")
