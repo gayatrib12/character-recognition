@@ -113,13 +113,15 @@ def classifyImages(inputFileName, outputFileName, doExtraCredit=False):
     # and the 'extra credit' test case.
     if doExtraCredit:
         # runNumber = 9  # original -> worse
-        runNumber = 14  # evenly sampled
+        runNumber = 14  # evenly sampled (13 was used for the paper for Table 1)
         charList = ['unknown', 'a', 'b', 'c', 'd', 'h', 'i', 'j',
                     'k']  # character list
     else:
         # runNumber = 2  # original -> worse
         runNumber = 7  # evenly sampled
         charList = ['', 'a', 'b', 'c', 'd', 'h', 'i', 'j', 'k']
+
+    print("Testing in progress, this may take a couple of minutes...")
 
     # Load test images
     testImages = preprocess(np.load(inputFileName))
@@ -179,7 +181,6 @@ def classifyImages(inputFileName, outputFileName, doExtraCredit=False):
         plt.yticks([])
     plt.savefig('predictions.png')
     # plt.show()
-    # plt.pause(0.1)
 
     print("Example data plot has been saved as 'predictions.png'.")
 
