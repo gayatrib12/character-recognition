@@ -103,19 +103,23 @@ def genModel(runNumber, params):
         = train_test_split(imagesIdx, labels, test_size=testSize,
                            random_state=randomSeed)
     trainingImages = images[trainingImagesIdx]  # this is a tensor
-    testImages = images[testImagesIdx]  # this is a tensor
+    # testImages = images[testImagesIdx]  # this is a tensor
+
+    I = np.load(partialPath + 'data.npy')
+    np.save('test{}.npy'.format(runNumber), I[testImagesIdx])
+    np.save('test{}_labels.npy'.format(runNumber), origLabels[testImagesIdx])
 
     # Load the training data into PyTorch
     trainDataset = torch.utils.data.TensorDataset(torch.FloatTensor(trainingImages),
-                                           torch.LongTensor(trainingLabels).squeeze())
-    trainLoader = torch.utils.data.DataLoader(trainDataset, batch_size=trainBatchSize,
-                                               shuffle=True)
+                    torch.LongTensor(trainingLabels).squeeze())
+    trainLoader = torch.utils.data.DataLoader(trainDataset,
+                                              batch_size=trainBatchSize)
 
     # Load the test data into PyTorch
-    testDataset = torch.utils.data.TensorDataset(torch.FloatTensor(testImages),
-                                           torch.LongTensor(testLabels).squeeze())
-    testLoader = torch.utils.data.DataLoader(testDataset, batch_size=testBatchSize,
-                                              shuffle=True)
+    testDataset = torch.utils.data.TensorDataset(torch.FloatTensor(trainingImages),
+                    torch.LongTensor(trainingLabels).squeeze())
+    testLoader = torch.utils.data.DataLoader(testDataset,
+                                             batch_size=testBatchSize)
 
     """======== Construct Convolutional Neural Network ========"""
 
@@ -263,19 +267,19 @@ def cnnTrain(epoch, network, trainLoader, optimizer, trainLosses, trainCounter,
 if __name__ == '__main__':
     """======================== Tunable Parameters ========================"""
 
-    runNumber = 19
+    runNumber = 21
 
     params = {
-        'npy_files_prefix': 'ab',
+        'npy_files_prefix': 'all',
         'random_seed': 4,
         'resized_shape': 28,
         'number_of_epochs': 300,
         'learning_rate': 0.01,
         'momentum': 0.5,
         'log_interval': 10,
-        'test_size': 0.33,
+        'test_size': 0.2,
         'train_batch_size': 32,
-        'test_batch_size': 64,
+        'test_batch_size': 256,
         'final_accuracy': -1,
     }
 
