@@ -140,6 +140,8 @@ def genModel(runNumber, params):
               runNumber, logInterval)
         cnnTest(network, testLoader, testLosses, params)
 
+    print("Displaying plots. You may need to close the plot window for the script to finish running.")
+
     plt.figure()
     plt.plot(trainCounter, trainLosses, color='blue')
     plt.scatter(testCounter, testLosses, color='red')
@@ -154,8 +156,6 @@ def genModel(runNumber, params):
     # Visualize example data
     examples = enumerate(testLoader)
     batchIdx, (exampleData, exampleTargets) = next(examples)
-
-    print("Plotting example data. You may need to close the plot window for the script to finish running.")
 
     plt.figure()
     for i in range(6):

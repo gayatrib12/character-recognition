@@ -122,7 +122,7 @@ def classifyImages(inputFileName, outputFileName, doExtraCredit=False):
         runNumber = 19  # back to original method but 300 epochs and train batch size of 32
         charList = ['', 'a', 'b', 'c', 'd', 'h', 'i', 'j', 'k']
 
-    print("Testing in progress, this may take a couple of minutes...")
+    print("Testing in progress, this may take a couple of minutes...\n")
 
     # Load test images
     testImages = preprocess(np.load(inputFileName))
@@ -181,7 +181,6 @@ def classifyImages(inputFileName, outputFileName, doExtraCredit=False):
         plt.xticks([])
         plt.yticks([])
     plt.savefig('predictions.png')
-    # plt.show()
 
     print("Example data plot has been saved as 'predictions.png'.")
 
