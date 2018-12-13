@@ -1,5 +1,7 @@
 # README
 
+## NOTE: We would like to participate in the extra credit.
+
 ## Script Descriptions
 
 - `train.py` - Train and cross validate a CNN to classify handwritten characters.
