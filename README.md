@@ -25,6 +25,8 @@ To classify the 'hard' dataset with 8 letters and unknowns, specify the `-e` fla
 python test.py hardData.npy out -e
 ```
 
+where `hardData.npy` can be a different name.
+
 To verify that our `train.py` script works, simply run:
 
 ```
