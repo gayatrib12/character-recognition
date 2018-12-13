@@ -1,6 +1,7 @@
 # README
 
-## NOTE: We would like to participate in the extra credit.
+## NOTE 1: We would like to participate in the extra credit.
+## NOTE 2: The name of our report is called `project01.pdf`.
 
 ## Script Descriptions
 
